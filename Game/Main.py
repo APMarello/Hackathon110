@@ -32,24 +32,26 @@ def draw_window(player, PLAYER):
 
 
 def player_handle_movement(keys_pressed, player, rotate_angle) -> int:
-    if keys_pressed[pygame.K_a] and player.x - VEL > 0 and not (player.colliderect(SCREEN_1_BARRIER_HORIZONTAL) and player.colliderect(SCREEN_1_BARRIER_VERTICAL)):  # LEFT
+    if keys_pressed[pygame.K_a] and player.x - VEL > 0 and not player.colliderect(SCREEN_1_BARRIER_HORIZONTAL) and not player.colliderect(SCREEN_1_BARRIER_VERTICAL):  # LEFT
         player.x -= VEL
-    if keys_pressed[pygame.K_d] and player.x - VEL < WIDTH - 55 and not (player.colliderect(SCREEN_1_BARRIER_HORIZONTAL) and player.colliderect(SCREEN_1_BARRIER_VERTICAL)):  # RIGHT
+        if player.colliderect(SCREEN_1_BARRIER_HORIZONTAL) or player.colliderect(SCREEN_1_BARRIER_VERTICAL):
+            player.x += 5
+    elif keys_pressed[pygame.K_d] and player.x - VEL < WIDTH - 55 and not player.colliderect(SCREEN_1_BARRIER_HORIZONTAL) and not player.colliderect(SCREEN_1_BARRIER_VERTICAL):  # RIGHT
         player.x += VEL
-    if keys_pressed[pygame.K_w] and player.y - VEL > 0 and not (player.colliderect(SCREEN_1_BARRIER_HORIZONTAL) and player.colliderect(SCREEN_1_BARRIER_VERTICAL)):  # UP
+        if player.colliderect(SCREEN_1_BARRIER_HORIZONTAL) or player.colliderect(SCREEN_1_BARRIER_VERTICAL):
+            player.x -= 5
+    elif keys_pressed[pygame.K_w] and player.y - VEL > 0 and not player.colliderect(SCREEN_1_BARRIER_HORIZONTAL) and not player.colliderect(SCREEN_1_BARRIER_VERTICAL):  # UP
         player.y -= VEL
-    if keys_pressed[pygame.K_s] and player.y - VEL < HEIGHT - 40 and not (player.colliderect(SCREEN_1_BARRIER_HORIZONTAL) and player.colliderect(SCREEN_1_BARRIER_VERTICAL)):  # DOWN
+        if player.colliderect(SCREEN_1_BARRIER_HORIZONTAL) or player.colliderect(SCREEN_1_BARRIER_VERTICAL):
+            player.y += 5
+    elif keys_pressed[pygame.K_s] and player.y - VEL < HEIGHT - 40 and not player.colliderect(SCREEN_1_BARRIER_HORIZONTAL) and not player.colliderect(SCREEN_1_BARRIER_VERTICAL):  # DOWN
         player.y += VEL
+        if player.colliderect(SCREEN_1_BARRIER_HORIZONTAL) or player.colliderect(SCREEN_1_BARRIER_VERTICAL):
+            player.y -= 5
     rotate_angle = -pygame.mouse.get_pos()[0] 
-    print((player.colliderect(SCREEN_1_BARRIER_HORIZONTAL)))
     return rotate_angle
 
-
-# def handle_collision(player) -> bool: 
-#     if player.colliderect(SCREEN_1_BARRIER_HORIZONTAL):
-#         hit_object = True
-#     return hit_object
-
+# and not (player.colliderect(SCREEN_1_BARRIER_HORIZONTAL) and player.colliderect(SCREEN_1_BARRIER_VERTICAL))
     
     
 def main():
@@ -67,7 +69,6 @@ def main():
         draw_window(player, PLAYER)
         keys_pressed = pygame.key.get_pressed()
         rotate_angle = player_handle_movement(keys_pressed, player, rotate_angle)
-        # handle_collision(player)
       
     pygame.quit
 
