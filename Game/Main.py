@@ -125,7 +125,7 @@ def handle_screen(player, screen_num) -> int:
         return screen_num
     elif player.x < 0 and screen_num == 8:
         player.x = WIDTH
-        screen_num = 8
+        screen_num = 7
         return screen_num
     elif player.x > WIDTH and screen_num == 8:
         player.x = 0
@@ -206,53 +206,53 @@ def player_handle_movement(keys_pressed, player, rotate_angle) -> int:
     return rotate_angle
 
 def screen_1():
-    SCREEN_BARRIER_1.update(300, 300, 600, 20)
-    SCREEN_BARRIER_2.update(0, 0, 20, 100)
-    SCREEN_BARRIER_3.update(50, 50, 20, 20)
-    SCREEN_BARRIER_4.update(800, 200, 20, 100)
-    SCREEN_BARRIER_5.update(200, 300, 600, 20)
-    SCREEN_BARRIER_6.update(150, 200, 20, 20)
+    SCREEN_BARRIER_1.update(400, 400, 500, 20)
+    SCREEN_BARRIER_2.update(680, 480, 20, 20)
+    SCREEN_BARRIER_3.update(400, 0, 20, 200)
+    SCREEN_BARRIER_4.update(400, 300, 20, 100)
+    SCREEN_BARRIER_5.update(200, 400, 20, 100)
+    SCREEN_BARRIER_6.update(0, 0, 0, 0)
 
 def screen_2():
     WIN.blit(CASTLE, (206, 20))
-    SCREEN_BARRIER_1.update(300, 300, 600, 20)
-    SCREEN_BARRIER_2.update(0, 0, 0, 0)
-    SCREEN_BARRIER_3.update(0, 0, 0, 0)
+    SCREEN_BARRIER_1.update(0, 400, 900, 20)
+    SCREEN_BARRIER_2.update(0, 400, 20, 100)
+    SCREEN_BARRIER_3.update(880, 400, 20, 100)
     SCREEN_BARRIER_4.update(0, 0, 0, 0)
     SCREEN_BARRIER_5.update(0, 0, 0, 0)
     SCREEN_BARRIER_6.update(0, 0, 0, 0)
 
 def screen_3():
-    SCREEN_BARRIER_1.update(0, 0, 0, 0)
-    SCREEN_BARRIER_2.update(150, 200, 100, 20)
-    SCREEN_BARRIER_3.update(0, 0, 0, 0)
+    SCREEN_BARRIER_1.update(0, 400, 700, 20)
+    SCREEN_BARRIER_2.update(700, 400, 20, 100)
+    SCREEN_BARRIER_3.update(800, 400, 20, 100)
     SCREEN_BARRIER_4.update(0, 0, 0, 0)
     SCREEN_BARRIER_5.update(0, 0, 0, 0)
     SCREEN_BARRIER_6.update(0, 0, 0, 0)
 
 def screen_4():
-    SCREEN_BARRIER_1.update(300, 300, 600, 300)
-    SCREEN_BARRIER_2.update(0, 0, 0, 0)
-    SCREEN_BARRIER_3.update(0, 0, 0, 0)
-    SCREEN_BARRIER_4.update(0, 0, 0, 0)
-    SCREEN_BARRIER_5.update(0, 0, 0, 0)
-    SCREEN_BARRIER_6.update(0, 0, 0, 0)
+    SCREEN_BARRIER_1.update(200, 0, 20, 300)
+    SCREEN_BARRIER_2.update(0, 300, 220, 20)
+    SCREEN_BARRIER_3.update(680, 0, 20, 360)
+    SCREEN_BARRIER_4.update(680, 360, 220, 20)
+    SCREEN_BARRIER_5.update(200, 450, 20, 50)
+    SCREEN_BARRIER_6.update(680, 480, 220, 20)
     
 def screen_5():
-    SCREEN_BARRIER_1.update(600, 400, 600, 20)
-    SCREEN_BARRIER_2.update(0, 0, 0, 0)
-    SCREEN_BARRIER_3.update(0, 0, 0, 0)
+    SCREEN_BARRIER_1.update(0, 400, 900, 20)
+    SCREEN_BARRIER_2.update(880, 0, 20, 400)
+    SCREEN_BARRIER_3.update(380, 400, 500, 20)
     SCREEN_BARRIER_4.update(0, 0, 0, 0)
     SCREEN_BARRIER_5.update(0, 0, 0, 0)
     SCREEN_BARRIER_6.update(0, 0, 0, 0)
 
 def screen_6():
-    SCREEN_BARRIER_1.update(300, 300, 100, 10)
-    SCREEN_BARRIER_2.update(0, 0, 0, 0)
-    SCREEN_BARRIER_3.update(0, 0, 0, 0)
-    SCREEN_BARRIER_4.update(0, 0, 0, 0)
-    SCREEN_BARRIER_5.update(0, 0, 0, 0)
-    SCREEN_BARRIER_6.update(0, 0, 0, 0)
+    SCREEN_BARRIER_1.update(700, 0, 20, 100)
+    SCREEN_BARRIER_2.update(800, 0, 20, 200)
+    SCREEN_BARRIER_3.update(0, 80, 700, 20)
+    SCREEN_BARRIER_4.update(0, 480, 900, 20)
+    SCREEN_BARRIER_5.update(0, 100, 20, 300)
+    SCREEN_BARRIER_6.update(0, 180, 800, 20)
 
 def screen_7():
     SCREEN_BARRIER_1.update(0, 0, 0, 0)
