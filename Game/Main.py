@@ -14,7 +14,7 @@ GREEN = (86, 125, 70)
 
 FPS = 60
 VEL = 5
-PLAYER_IMAGE = pygame.image.load(os.path.join('tutorial_assets', 'player.png'))
+PLAYER_IMAGE = pygame.image.load(os.path.join('game_assets', 'player.png'))
 
 
 def draw_window(player, PLAYER):   
